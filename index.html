@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>For My Valentine</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body { text-align: center; font-family: sans-serif; background: #fff0f5; padding-top: 50px; }
+        #container { background: white; margin: auto; padding: 20px; width: 80%; border-radius: 15px; }
+        .btns { margin-top: 20px; }
+        #yes { background: #4CAF50; color: white; border: none; padding: 10px 20px; font-size: 16px; border-radius: 5px; cursor: pointer; }
+        #no { background: #f44336; color: white; border: none; padding: 10px 20px; font-size: 16px; border-radius: 5px; margin-left: 10px; }
+        .hidden { display: none; }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1 id="question">Will you be my Valentine? ❤️</h1>
+        <div class="btns">
+            <button id="yes" onclick="showLove()">Yes</button>
+            <button id="no" onclick="makeBigger()">No</button>
+        </div>
+    </div>
+
+    <div id="celebration" class="hidden">
+        <h1>Yay! I love you! 😘</h1>
+        <p>Prepare for the best Valentine's Day!</p>
+    </div>
+
+    <script>
+        let size = 16;
+        function makeBigger() {
+            size += 30;
+            document.getElementById('yes').style.fontSize = size + "px";
+            document.getElementById('yes').style.padding = (size/2) + "px " + (size) + "px";
+        }
+        function showLove() {
+            document.getElementById('container').classList.add('hidden');
+            document.getElementById('celebration').classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
