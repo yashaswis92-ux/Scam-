@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Special Question ❤️</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #ffe6e6;
+            text-align: center;
+        }
+
+        .container {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        h1 { color: #d63384; }
+
+        .buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+            min-height: 150px;
+        }
+
+        #yesBtn {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        #noBtn {
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        #successMessage {
+            display: none;
+        }
+
+        img { width: 200px; border-radius: 10px; }
+    </style>
+</head>
+<body>
+
+    <div class="container" id="mainContainer">
+        <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHpueG56ZzRyc3R6eGZ5ZzRyc3R6eGZ5ZzRyc3R6eGZ5ZzRyc3R6eCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/L95W4M8qO1Me6hXYV9/giphy.gif" alt="Cute gif">
+        <h1>Will you be my Valentine? ❤️</h1>
+        
+        <div class="buttons">
+            <button id="yesBtn">Yes</button>
+            <button id="noBtn">No</button>
+        </div>
+    </div>
+
+    <div class="container" id="successMessage">
+        <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHpueG56ZzRyc3R6eGZ5ZzRyc3R6eGZ5ZzRyc3R6eGZ5ZzRyc3R6eCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/26FLdmIp6wJr91JAI/giphy.gif" alt="Happy gif">
+        <h1>Yay! See you on the 14th! 😘</h1>
+    </div>
+
+    <script>
+        const yesBtn = document.getElementById('yesBtn');
+        const noBtn = document.getElementById('noBtn');
+        const mainContainer = document.getElementById('mainContainer');
+        const successMessage = document.getElementById('successMessage');
+
+        let yesSize = 18;
+
+        noBtn.addEventListener('click', () => {
+            // Increase the "Yes" button size
+            yesSize += 40;
+            yesBtn.style.fontSize = yesSize + 'px';
+            yesBtn.style.padding = (yesSize/1.2) + 'px ' + (yesSize * 1.5) + 'px';
+            
+            // Optional: Change the text of the no button to be funny
+            const phrases = ["Are you sure?", "Really?", "Think again!", "Last chance!", "Surely not?"];
+            noBtn.innerText = phrases[Math.floor(Math.random() * phrases.length)];
+        });
+
+        yesBtn.addEventListener('click', () => {
+            mainContainer.style.display = 'none';
+            successMessage.style.display = 'block';
+        });
+    </script>
+</body>
+</html>
